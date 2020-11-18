@@ -1,0 +1,64 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="parent-container">
+  <div class="leftpane-container">
+    <nav id="sidebar" class="active">
+      <a routerLink="/quick/search" class="img logo mb-5" style="background-image: url(../assets/cross.png);"></a>
+    <ul class="list-unstyled components mb-3">      
+      <li class="left-item-link">
+          <a routerLink="/quick/search">Quick Search</a>
+      </li>      
+      <li class="left-item-link">
+        <a routerLink="/search">Search</a>
+      </li>
+      <li class="left-item-link">
+        <a routerLink="/voice/search">Voice Search</a>
+      </li>
+      <li class="left-item-link">
+        <a routerLink="/search/history">Search History</a>
+      </li>
+      <li>
+        <div class="lang-div">
+        <label class="lang-label" style="color: #f8b739;">Language Settings : </label>
+        <label class="lang-label" for="cars">Fullscreen language </label>
+        <select class="lang-sel" name="fullScreenLang" id="fullLanguage" (change)="onFullScreenLangChange($event.target.value)">
+          <option value="tamil">Tamil</option>
+          <option value="english">English</option>
+          <option value="telugu">Telugu</option>         
+        </select>
+        <label class="lang-label">Search language </label>
+        <select class="lang-sel" name="searchScreenLang" id="searchLanguage" (change)="onSearchLangChange($event.target.value)">
+          <option value="tamil">Tamil</option>
+          <option value="english">English</option>
+          <option value="telugu">Telugu</option>         
+        </select>
+      </div>
+      </li>
+    </ul>
+  </nav>
+  </div>
+  <div class="content-holder">
+    <div class="header-container top-link-bar">
+      <h1 class="header-title">The Bible Seeker</h1>
+      <div class="top-link-bar">
+      <ul>      
+        <li>
+            <a routerLink="/quick/search">Home</a>
+        </li>      
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>       
+      </ul>
+      </div>
+    </div>
+    <div class="body-container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+  
+</div>
+
+

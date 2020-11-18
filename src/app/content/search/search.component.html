@@ -1,0 +1,14 @@
+<div *ngIf="!showChapter && !showVerse" style="width: 100%;font-family: cursive;color: rgba(255, 255, 255, 0.8);font-size: larger;padding-left: 10px;">Books</div>
+<div class="chapter-container" *ngIf="!showChapter && !showVerse">
+    <button *ngFor="let chapter of chapters;let i = index" class="button" (click)="onClick_Book(i)">{{chapter}}</button>
+</div>
+<div *ngIf="showChapter" style="width: 100%;font-family: cursive;color: rgba(255, 255, 255, 0.8);font-size: larger;padding-left: 10px;">Chapters</div>
+<div class="chapter-container" *ngIf="showChapter">
+    <button *ngFor="let in of counter(noOfChapters) ;let j = index" class="button" (click)="onClick_Chapter(j)">{{j+1}}</button>
+</div>
+<div *ngIf="showVerse" style="width: 100%;font-family: cursive;color: rgba(255, 255, 255, 0.8);font-size: larger;padding-left: 10px;">Verses</div>
+<div class="chapter-container" *ngIf="showVerse">
+    <button *ngFor="let in of counter(noOfVerses) ;let k = index" class="button" (click)="onClick_Verse(k)">{{k+1}}</button>
+</div>
+
+<app-full-screen [verseToShow]="verseToShow" *ngIf="isShowFullScreen()"></app-full-screen>

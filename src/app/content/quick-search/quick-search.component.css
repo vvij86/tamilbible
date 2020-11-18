@@ -1,0 +1,57 @@
+.example-form {
+  min-width: 150px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.input-Bible {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.buscador {
+  color: white !important;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+  background-color: white !important;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: white !important;
+}
+
+:host ::ng-deep input.mat-input-element {
+  color: white
+}
+
+.chapter-container {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /*height: 400px;*/
+  margin: 10px;
+}
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  font-size: 15px;
+  color: unset;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  font-family: cursive;
+  font-weight: bold;
+}

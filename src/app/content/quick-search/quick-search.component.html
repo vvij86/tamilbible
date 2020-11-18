@@ -1,0 +1,23 @@
+<div>
+<form [formGroup]="quickSearchForm" class="example-form" style="display: flex;width:300px;height: 40px; align-items: center;justify-content: stretch;" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label id="placeholder" class="buscador">Select Book</mat-label>
+      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.displayName}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <div style="display: flex;margin: 20px;"><label class="buscador" style="width:90px">Chapter : </label><input #inputChapter name="txtChapter" type="number" formControlName="txtChapter"/></div>
+    <div style="display: flex;margin: 10px;"><label class="buscador" style="width:80px">Verse : </label><input name="txtVerse" type="number" formControlName="txtVerse"/></div>
+    <div style="display: flex;margin: 10px;"><input type="submit"/></div>
+    <div style="display: flex;margin: 10px;"><input type="button" (click)="resetFormValues()" value="Clear"/></div>
+  </form>
+</div>
+
+<div class="chapter-container">
+    <button *ngFor="let chapter of chapters;let i = index" class="button" (click)="onClick_Book(chapter)">{{chapter}}</button>
+</div>
+
+<app-full-screen [bookId]="bookId" [chapterNo]="chapterNo" [verseToShow]="verseToShow" [verseNo]="verseNo"  [verseDetails]="verseDetails" [maxVerse]="maxVerse" *ngIf="isShowFullScreen()"></app-full-screen>
